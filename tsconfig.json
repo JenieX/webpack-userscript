@@ -4,6 +4,7 @@
         "outDir": "dist",
         "esModuleInterop": true,
         "sourceMap": true,
+        "strict": true,
         "lib": [
             "ES2019"
         ],
@@ -12,7 +13,9 @@
     },
     "include": [
         "lib",
+        "scripts",
         "test",
-        "index.ts"
+        "index.ts",
+        "types"
     ]
 }

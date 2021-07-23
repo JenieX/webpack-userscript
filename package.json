@@ -9,6 +9,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig-prod.json",
+    "build:schema": "ts-node scripts/build_schema.ts",
     "commit": "gitmoji -c",
     "coverage": "",
     "docs": "typedoc --tsconfig tsconfig-docs.json",
@@ -32,7 +33,9 @@
   },
   "homepage": "https://github.com/momocow/webpack-userscript#readme",
   "devDependencies": {
+    "@microsoft/tsdoc-config": "^0.15.2",
     "@semantic-release/git": "^9.0.0",
+    "@types/lodash": "^4.14.171",
     "@types/sinon": "^10.0.2",
     "@types/ssri": "^7.1.0",
     "@types/tape": "^4.13.0",
@@ -40,15 +43,14 @@
     "@typescript-eslint/parser": "^4.28.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
     "eslint-config-standard-typescript-prettier": "^4.2.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^4.3.0",
-    "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-tsdoc": "^0.2.14",
     "gitmoji-cli": "^4.1.0",
+    "json-schema": "^0.3.0",
     "lint-staged": "^11.0.0",
     "memfs": "^3.2.2",
     "nyc": "^15.1.0",
@@ -62,6 +64,7 @@
     "source-map-support": "^0.5.19",
     "tap-nyc": "^1.0.3",
     "tape": "^5.2.2",
+    "ts-json-schema-generator": "^0.94.1",
     "ts-node": "^10.0.0",
     "typedoc": "^0.21.2",
     "typescript": "^4.3.4",
@@ -69,15 +72,17 @@
     "webpack-cli": "^4.7.2"
   },
   "peerDependencies": {
-    "tapable": "^2.0.0",
+    "tapable": "^2.2.0",
     "webpack": "^5.0.0"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
+    "ajv": "^8.6.2",
+    "lodash": "^4.17.21",
     "matcher": "^4.0.0",
-    "schema-utils": "^3.0.0",
+    "schema-utils": "^3.1.1",
     "ssri": "^8.0.1"
   }
 }
